@@ -10,7 +10,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}' ",
-    "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx} .'",
+    "lint": "eslint \"**/*.{ts,tsx}\"",
     "postinstall": "echo \"Package install attempted in client directory\""
   },
   "eslintConfig": {
