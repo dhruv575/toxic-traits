@@ -1,6 +1,7 @@
 import { Typography, Button } from '@mui/material';
 
 import React from 'react';
+import DMKR from './Images/logo.png';
 
 function Header() {
   return (
@@ -8,48 +9,67 @@ function Header() {
       className="flex w-full"
       style={{
         width: '100%',
-        marginBottom: '1rem',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
         flex: 'center',
-        height: '60px',
-        background: 'aqua',
-        opacity: '80%',
+        background: 'black',
       }}
     >
       <div
         className="Pokemon"
         style={{
-          marginLeft: '30px',
+          marginLeft: '10px',
           marginRight: '30px',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
         }}
       >
-        <Typography
-          sx={{
-            fontWeight: 'bold',
-            fontSize: '30px',
-            fontFamily: 'Nunito',
+        <div
+          className="flex items-center p-4"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: '200px',
           }}
         >
-          DMK Toxic Traits!
-        </Typography>
+          <img
+            src={DMKR}
+            alt="AirBnB Logo"
+            className="w-1/6 h-auto logo"
+            width="w00px"
+            height="75px"
+          />
+        </div>
       </div>
       <div
         className="Pokemon"
         style={{
-          marginLeft: '30px',
-          marginRight: '30px',
+          padding: '20px',
         }}
       >
         <Button
-          variant="outlined"
+          variant="contained"
           sx={{
-            fontWeight: 'bold',
+            marginRight: '20px',
+            height: '40px',
             fontSize: '20px',
-            fontFamily: 'Nunito',
-            color: 'black',
+            padding: '25px',
+            backgroundColor: 'maroon',
+          }}
+        >
+          ADD
+        </Button>
+        <Button
+          variant="contained"
+          sx={{
+            marginRight: '20px',
+            height: '40px',
+            fontSize: '20px',
+            padding: '25px',
+            backgroundColor: 'maroon',
           }}
         >
           SEARCH
