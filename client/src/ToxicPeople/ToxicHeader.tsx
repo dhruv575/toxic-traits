@@ -1,4 +1,5 @@
 import { Typography, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 import React from 'react';
 import DMKR from './Images/logo.png';
@@ -37,13 +38,15 @@ function Header() {
             width: '200px',
           }}
         >
-          <img
-            src={DMKR}
-            alt="AirBnB Logo"
-            className="w-1/6 h-auto logo"
-            width="w00px"
-            height="75px"
-          />
+          <Link to="/toxic">
+            <img
+              src={DMKR}
+              alt="AirBnB Logo"
+              className="w-1/6 h-auto logo"
+              width="w00px"
+              height="75px"
+            />
+          </Link>
         </div>
       </div>
       <div

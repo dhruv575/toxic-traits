@@ -25,11 +25,9 @@ export default function ToxicCard({
         backgroundColor: 'black',
         width: '400px',
         marginBottom: '20px',
-        boxShadow:
-          'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;',
       }}
     >
-      <CardActionArea>
+      <CardActionArea href={`/${name}`}>
         <CardMedia
           component="img"
           height="300px"
@@ -56,9 +54,6 @@ export default function ToxicCard({
               fontSize="14px"
             >
               {toxicFact}
-            </Typography>
-            <Typography variant="body2" color="maroon">
-              {toxicTraits}
             </Typography>
           </Box>
         </CardContent>

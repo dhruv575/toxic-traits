@@ -25,36 +25,14 @@ function ToxicTraitsPage() {
           backgroundColor: 'white',
         }}
       >
-        <ToxicCard
-          name="Dhruv"
-          toxicFact="Favorite game was Pokemon Planet"
-          toxicTraits="Fanatical Arsenal fan, Sleeps at 11:30, Collects books as room decorations, Never has breakfast"
-          imagePath={Dhruv}
-        />
-        <ToxicCard
-          name="Kevin"
-          toxicFact="Goes to Farmer's Markets"
-          toxicTraits="Took a gap semester, Probably not an alcoholic, Seems very nice idk what to put here tbh"
-          imagePath={Kevin}
-        />
-        <ToxicCard
-          name="Matt"
-          toxicFact="Makes Margaritas"
-          toxicTraits="Drinks vodka like its water, loses a ton of money in poker, doing job interviews, used to TA ESE 1110"
-          imagePath={Matt}
-        />
-        <ToxicCard
-          name="Mohamed"
-          toxicFact="Used to be a Goalkeeper"
-          toxicTraits="Very tall, Atletico Madrid fan, Teaches a class here, Is a senior, Hasn't gone to class in 3 years"
-          imagePath={Mo}
-        />
-        <ToxicCard
-          name="Mohamed"
-          toxicFact="Used to be a Goalkeeper"
-          toxicTraits="Very tall, Atletico Madrid fan, Teaches a class here, Is a senior, Hasn't gone to class in 3 years"
-          imagePath={Mo}
-        />
+        {toxics.map((person) => (
+          <ToxicCard
+            name={person.name}
+            toxicFact={person.toxicFact}
+            toxicTraits={person.toxicTraits}
+            imagePath={Dhruv}
+          />
+        ))}
       </Box>
     </div>
   );
