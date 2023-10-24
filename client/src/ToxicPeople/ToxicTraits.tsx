@@ -8,6 +8,7 @@ import Dhruv from './Images/Dhruv.png';
 import Kevin from './Images/Kevin.png';
 import Matt from './Images/Matt.png';
 import Mo from './Images/Mo.jpg';
+import toxics from './toxics.json';
 
 function ToxicTraitsPage() {
   return (
@@ -21,7 +22,7 @@ function ToxicTraitsPage() {
           alignContent: 'left',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          backgroundColor: '#383838',
+          backgroundColor: 'white',
         }}
       >
         <ToxicCard

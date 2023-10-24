@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Dhruv",
+        "toxicFact": "Favorite game was Pokemon Conquest",
+        "toxicTraits": "Fanatical Arsenal fan, Sleeps at 11:30, Collects books as room decorations, Never has breakfast",
+        "imagePath": "./Images/Dhruv.png"
+    },
+    {
+        "name": "Kevin",
+        "toxicFact": "Goes to Farmer's Markets",
+        "toxicTraits": "Took a gap semester, Probably not an alcoholic, Seems very nice idk what to put here tbh",
+        "imagePath": "./Images/Kevin.png"
+    },
+    {
+        "name": "Matt",
+        "toxicFact": "Makes Margaritas",
+        "toxicTraits": "Drinks vodka like its water, loses a ton of money in poker, doing job interviews, used to TA ESE 1110",
+        "imagePath": "./Images/Matt.png"
+    },
+    {
+        "name": "Mohamed",
+        "toxicFact": "Used to be a goalkeeper",
+        "toxicTraits": "Very tall, Atletico Madrid fan, Teaches a class here, Is a senior, Hasn't gone to class in 3 years",
+        "imagePath": "./Images/Mo.jpg"
+    }
+]
