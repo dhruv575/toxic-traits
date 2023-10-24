@@ -57,26 +57,39 @@ function ToxicTraitsPage({
             variant="body2"
             color="maroon"
             fontWeight="bold"
-            fontSize="14px"
+            fontSize="20px"
           >
-            {toxicFact}
+            {name}&apos;s most concerning toxic trait is: {toxicFact}
           </Typography>
           <Typography variant="body2" color="maroon">
-            {toxicTraits}
+            However, you should also be worried when hanging out with this
+            person because: {toxicTraits}
           </Typography>
-          <Typography
-            gutterBottom
-            variant="h5"
-            component="div"
-            color="maroon"
-            fontWeight="bold"
-            fontSize="40px"
-          >
-            Tips on Dealing with Toxic People
-          </Typography>
-          <Typography variant="body2" color="maroon">
-            {toxicTraits}
-          </Typography>
+          <Box marginTop="60px">
+            <Typography
+              variant="h5"
+              component="div"
+              color="maroon"
+              fontWeight="bold"
+              fontSize="20px"
+            >
+              DMK&apos;s Tips on Dealing with Toxic People
+            </Typography>
+            <Typography variant="body2" color="maroon">
+              1. If you see a toxic person walking around, DO NOT approach them
+            </Typography>
+            <Typography variant="body2" color="maroon">
+              2. Call the police immediately and perhaps order some tazers to
+              Amazon Commons
+            </Typography>
+            <Typography variant="body2" color="maroon">
+              3. If that toxic person is cute though you could totally go talk
+              to them
+            </Typography>
+            <Typography variant="body2" color="maroon">
+              4. Be prepared for what you are getting yourself into!
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </div>
