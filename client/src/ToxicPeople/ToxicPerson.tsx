@@ -33,13 +33,13 @@ function ToxicTraitsPage({
           alignContent: 'left',
           flexWrap: 'wrap',
           backgroundColor: 'white',
-          marginTop: '40px',
+          marginTop: '20px',
         }}
       >
-        <img src={imagePath} height="50%" width="50%" alt="Toxic Person" />
+        <img src={imagePath} width="30%" alt="Toxic Person" />
         <Box
           sx={{
-            width: '50%',
+            width: '70%',
             padding: '30px',
           }}
         >
@@ -60,6 +60,19 @@ function ToxicTraitsPage({
             fontSize="14px"
           >
             {toxicFact}
+          </Typography>
+          <Typography variant="body2" color="maroon">
+            {toxicTraits}
+          </Typography>
+          <Typography
+            gutterBottom
+            variant="h5"
+            component="div"
+            color="maroon"
+            fontWeight="bold"
+            fontSize="40px"
+          >
+            Tips on Dealing with Toxic People
           </Typography>
           <Typography variant="body2" color="maroon">
             {toxicTraits}

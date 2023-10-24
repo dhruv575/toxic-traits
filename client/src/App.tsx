@@ -21,6 +21,9 @@ import LoginPage from './Authentication/LoginPage';
 import EmailResetPasswordPage from './Authentication/EmailResetPasswordPage';
 import ResetPasswordPage from './Authentication/ResetPasswordPage';
 import ToxicTraitsPage from './ToxicPeople/ToxicTraits';
+import ToxicPersonPage from './ToxicPeople/ToxicPerson';
+import toxics from './ToxicPeople/toxics.json';
+import Dhruv from './ToxicPeople/Images/Dhruv.png';
 
 function App() {
   return (
@@ -36,6 +39,19 @@ function App() {
                     <Route path="/login" element={<LoginPage />} />
                     <Route path="/toxic" element={<ToxicTraitsPage />} />
                     <Route path="/register" element={<RegisterPage />} />
+                    {toxics.map((person) => (
+                      <Route
+                        path={`/${person.name}`}
+                        element={
+                          <ToxicPersonPage
+                            name={person.name}
+                            toxicFact={person.toxicFact}
+                            toxicTraits={person.toxicTraits}
+                            imagePath={Dhruv}
+                          />
+                        }
+                      />
+                    ))}
                     <Route
                       path="/verify-account/:token"
                       element={<VerifyAccountPage />}
