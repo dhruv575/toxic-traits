@@ -4,8 +4,6 @@
  */
 import { ToxicPerson } from "../models/toxicperson.model";
 
-
-
 const createToxicPerson = async (
     firstName: string, 
     lastName: string,
@@ -26,3 +24,6 @@ const getAllToxicPeople = async () => {
     const toxicPeople = await ToxicPerson.find();
     return toxicPeople;
 }
+
+export {createToxicPerson, getAllToxicPeople};
+

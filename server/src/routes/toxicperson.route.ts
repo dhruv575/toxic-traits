@@ -3,3 +3,12 @@
  * defines the routes that will be hit by the backend, and which functions they call from the controller layer to perform the
  * desired function.
  */
+
+import express from 'express';
+import { createToxicPersonController, getAllToxicPeopleController } from '../controllers/toxicperson.controller';
+import 'dotenv/config';
+
+const router = express.Router();
+
+router.get('/getAllToxicPeople', getAllToxicPeopleController);
+router.post('/createToxicPerson', createToxicPersonController);
