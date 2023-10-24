@@ -30,7 +30,7 @@ function ToxicTraitsPage() {
             name={person.name}
             toxicFact={person.toxicFact}
             toxicTraits={person.toxicTraits}
-            imagePath={Dhruv}
+            imagePath={person.imagePath}
           />
         ))}
       </Box>
