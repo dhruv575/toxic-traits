@@ -18,6 +18,7 @@ const ToxicPersonSchema = new mongoose.Schema({
 const ToxicPerson = mongoose.model<IToxicPerson>(
   'ToxicPerson',
   ToxicPersonSchema,
+  'people'
 );
 
 export { IToxicPerson, ToxicPerson };
