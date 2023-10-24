@@ -6,9 +6,10 @@
 
 import express from 'express';
 import { createToxicPersonController, getAllToxicPeopleController } from '../controllers/toxicperson.controller';
-import 'dotenv/config';
 
 const router = express.Router();
 
-router.get('/getAllToxicPeople', getAllToxicPeopleController);
-router.post('/createToxicPerson', createToxicPersonController);
+router.get('/all', getAllToxicPeopleController);
+router.post('/createPerson', createToxicPersonController);
+
+export default router;
