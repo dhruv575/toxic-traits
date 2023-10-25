@@ -10,12 +10,17 @@ import Matt from './Images/Matt.png';
 import Mo from './Images/Mo.jpg';
 
 type ToxicCardProps = {
-  name: string;
+  firstName: string;
+  lastName: string;
   toxicTraits: string[];
   imagePath: string;
 };
-
-function ToxicTraitsPage({ name, toxicTraits, imagePath }: ToxicCardProps) {
+function ToxicTraitsPage({
+  firstName,
+  lastName,
+  toxicTraits,
+  imagePath,
+}: ToxicCardProps) {
   return (
     <div className="App">
       <Header />
@@ -45,7 +50,7 @@ function ToxicTraitsPage({ name, toxicTraits, imagePath }: ToxicCardProps) {
             fontWeight="bold"
             fontSize="40px"
           >
-            {name}
+            {firstName} {lastName}
           </Typography>
           <Typography
             variant="body2"
@@ -53,12 +58,17 @@ function ToxicTraitsPage({ name, toxicTraits, imagePath }: ToxicCardProps) {
             fontWeight="bold"
             fontSize="20px"
           >
-            {name}&apos;s most concerning toxic trait is: {toxicTraits[0]}
+            {firstName}&apos;s most concerning toxic trait is: {toxicTraits[0]}
           </Typography>
           <Typography variant="body2" color="maroon">
-            However, you should also be worried when hanging out with this
-            person because: {toxicTraits}
+            Their full list of toxic traits is:
           </Typography>
+          {toxicTraits.map((trait, index) => (
+            <Typography variant="body2" color="maroon">
+              {'\t'}
+              {index + 1}. {trait}
+            </Typography>
+          ))}
           <Box marginTop="60px">
             <Typography
               variant="h5"

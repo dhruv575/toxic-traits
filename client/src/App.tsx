@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { CssBaseline } from '@mui/material';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -22,10 +22,31 @@ import EmailResetPasswordPage from './Authentication/EmailResetPasswordPage';
 import ResetPasswordPage from './Authentication/ResetPasswordPage';
 import ToxicTraitsPage from './ToxicPeople/ToxicTraits';
 import ToxicPersonPage from './ToxicPeople/ToxicPerson';
-import toxics from './ToxicPeople/toxics.json';
-import Dhruv from './ToxicPeople/Images/Dhruv.png';
 
 function App() {
+  type ToxicPerson = {
+    firstName: string;
+    lastName: string;
+    toxicTraits: string[];
+    pictureUrl: string;
+  };
+
+  const [toxics, setToxics] = useState<ToxicPerson[]>([]);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/toxicperson/all');
+      const jsonData = await response.json();
+      setToxics(jsonData);
+    } catch (error) {
+      console.error('There was an error fetching the data:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -41,12 +62,13 @@ function App() {
                     <Route path="/register" element={<RegisterPage />} />
                     {toxics.map((person) => (
                       <Route
-                        path={`/${person.name}`}
+                        path={`/${person.firstName}`}
                         element={
                           <ToxicPersonPage
-                            name={person.name}
+                            firstName={person.firstName}
+                            lastName={person.lastName}
                             toxicTraits={person.toxicTraits}
-                            imagePath={person.imagePath}
+                            imagePath={person.pictureUrl}
                           />
                         }
                       />

@@ -33,10 +33,10 @@ export default function FormDialog({ Title }: FormDialogProps) {
     const lastName = nameArrary[1];
     const toxicArray = toxicTraits.split(', ');
     const toxicPerson = {
-     firstName,
+      firstName,
       lastName,
-     pictureUrl:imagePath,
-      toxicTraits:toxicArray,
+      pictureUrl: imagePath,
+      toxicTraits: toxicArray,
     };
     console.log(JSON.stringify(toxicPerson));
     await fetch('http://localhost:4000/api/toxicPerson/createPerson', {
@@ -51,7 +51,6 @@ export default function FormDialog({ Title }: FormDialogProps) {
       .catch((error) => {
         console.error('Error:', error);
       });
-
   };
 
   return (
