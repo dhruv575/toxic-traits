@@ -17,24 +17,24 @@ function ToxicTraitsPage() {
     firstName: string;
     lastName: string;
     toxicTraits: string[];
-    imagePath: string;
+    pictureUrl: string;
   };
 
   const [toxics, setToxics] = useState<ToxicPerson[]>([]);
 
+  const fetchData = async () => {
+    try {
+      const response = await fetch(
+        'http://localhost:4000/api/toxicperson/all',
+      );
+      const jsonData = await response.json();
+      setToxics(jsonData);
+    } catch (error) {
+      console.error('There was an error fetching the data:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          'http://localhost:4000/api/toxicperson/all',
-        );
-        const jsonData = await response.json();
-        setToxics(jsonData);
-      } catch (error) {
-        console.error('There was an error fetching the data:', error);
-      }
-    };
     fetchData();
   }, []);
 
@@ -56,7 +56,7 @@ function ToxicTraitsPage() {
           <ToxicCard
             name={person.firstName+" "+person.lastName}
             toxicTraits={person.toxicTraits}
-            imagePath={person.imagePath}
+            imagePath={person.pictureUrl}
           />
         ))}
       </Box>
@@ -65,3 +65,4 @@ function ToxicTraitsPage() {
 }
 
 export default ToxicTraitsPage;
+

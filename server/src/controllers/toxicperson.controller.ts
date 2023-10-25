@@ -15,6 +15,7 @@ const createToxicPersonController = async (
     ) => {
     const { firstName, lastName, pictureUrl, toxicTraits } = req.body;
     if (!firstName || !lastName || !pictureUrl || !toxicTraits) {
+        
         next(ApiError.badRequest('Missing required fields.'));
         return;
     }
