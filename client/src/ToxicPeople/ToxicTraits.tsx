@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Typography, Button, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import ScreenGrid from '../components/ScreenGrid';
@@ -8,9 +8,21 @@ import Dhruv from './Images/Dhruv.png';
 import Kevin from './Images/Kevin.png';
 import Matt from './Images/Matt.png';
 import Mo from './Images/Mo.jpg';
-import toxics from './toxics.json';
+import { type } from 'os';
 
 function ToxicTraitsPage() {
+
+
+  type ToxicPerson = {
+    firstName: string;
+    lastName: string;
+    toxicTraits: string[];
+    imagePath: string;
+  };
+
+  const [toxics, setToxics] = useState<ToxicPerson[]>([]);
+
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,7 +30,7 @@ function ToxicTraitsPage() {
           'http://localhost:4000/api/toxicperson/all',
         );
         const jsonData = await response.json();
-        console.log(jsonData);
+        setToxics(jsonData);
       } catch (error) {
         console.error('There was an error fetching the data:', error);
       }
@@ -42,7 +54,7 @@ function ToxicTraitsPage() {
       >
         {toxics.map((person) => (
           <ToxicCard
-            name={person.name}
+            name={person.firstName+" "+person.lastName}
             toxicTraits={person.toxicTraits}
             imagePath={person.imagePath}
           />
