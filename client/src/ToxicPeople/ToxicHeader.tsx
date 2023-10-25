@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import React from 'react';
 import DMKR from './Images/logo.png';
+import FormDialog from './FormDialog';
 
 function Header() {
   return (
@@ -53,22 +54,11 @@ function Header() {
         className="Pokemon"
         style={{
           padding: '20px',
+          display: 'flex',
+          flexDirection: 'row',
         }}
       >
-        <Button
-          variant="contained"
-          sx={{
-            marginRight: '20px',
-            height: '40px',
-            fontSize: '20px',
-            padding: '25px',
-            backgroundColor: 'maroon',
-            boxShadow:
-              'rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;',
-          }}
-        >
-          ADD
-        </Button>
+        <FormDialog Title="ADD" />
         <Button
           variant="contained"
           sx={{
