@@ -45,7 +45,6 @@ function App() {
                         element={
                           <ToxicPersonPage
                             name={person.name}
-                            toxicFact={person.toxicFact}
                             toxicTraits={person.toxicTraits}
                             imagePath={person.imagePath}
                           />

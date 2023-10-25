@@ -28,6 +28,10 @@ export default function FormDialog({ Title }: FormDialogProps) {
 
   const handleConfirm = () => {
     setOpen(false);
+    const nameArrary = name.split(' ');
+    const firstName = nameArrary[0];
+    const lastName = nameArrary[1];
+    const toxicArray = toxicTraits.split(', ');
   };
 
   return (
@@ -57,7 +61,7 @@ export default function FormDialog({ Title }: FormDialogProps) {
       >
         <DialogContent
           sx={{
-            backgroundColor: 'gray',
+            backgroundColor: '#ADB3AE',
           }}
         >
           <DialogTitle>Add More Toxic People!</DialogTitle>
@@ -69,7 +73,7 @@ export default function FormDialog({ Title }: FormDialogProps) {
             autoFocus
             margin="dense"
             id="name"
-            label="Name"
+            label="Full Name"
             type="email"
             fullWidth
             variant="standard"
@@ -80,18 +84,7 @@ export default function FormDialog({ Title }: FormDialogProps) {
             autoFocus
             margin="dense"
             id="name"
-            label="Most toxic trait"
-            type="email"
-            fullWidth
-            variant="standard"
-            value={toxicFact}
-            onChange={(e) => setToxicFact(e.target.value)}
-          />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="More toxic traits"
+            label="Comma seperated toxic traits"
             type="email"
             fullWidth
             variant="standard"

@@ -11,17 +11,11 @@ import Mo from './Images/Mo.jpg';
 
 type ToxicCardProps = {
   name: string;
-  toxicFact: string;
-  toxicTraits: string;
+  toxicTraits: string[];
   imagePath: string;
 };
 
-function ToxicTraitsPage({
-  name,
-  toxicFact,
-  toxicTraits,
-  imagePath,
-}: ToxicCardProps) {
+function ToxicTraitsPage({ name, toxicTraits, imagePath }: ToxicCardProps) {
   return (
     <div className="App">
       <Header />
@@ -59,7 +53,7 @@ function ToxicTraitsPage({
             fontWeight="bold"
             fontSize="20px"
           >
-            {name}&apos;s most concerning toxic trait is: {toxicFact}
+            {name}&apos;s most concerning toxic trait is: {toxicTraits[0]}
           </Typography>
           <Typography variant="body2" color="maroon">
             However, you should also be worried when hanging out with this

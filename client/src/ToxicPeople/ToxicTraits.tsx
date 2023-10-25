@@ -11,23 +11,20 @@ import Mo from './Images/Mo.jpg';
 import toxics from './toxics.json';
 
 function ToxicTraitsPage() {
-
-
-
   useEffect(() => {
     const fetchData = async () => {
-        try {
-            const response = await fetch('http://localhost:4000/api/toxicperson/all');
-            const jsonData = await response.json();
-           console.log(jsonData);
-        } catch (error) {
-            console.error("There was an error fetching the data:", error);
-        }
+      try {
+        const response = await fetch(
+          'http://localhost:4000/api/toxicperson/all',
+        );
+        const jsonData = await response.json();
+        console.log(jsonData);
+      } catch (error) {
+        console.error('There was an error fetching the data:', error);
+      }
     };
     fetchData();
-}, []);
-
-
+  }, []);
 
   return (
     <div className="App">
@@ -46,7 +43,6 @@ function ToxicTraitsPage() {
         {toxics.map((person) => (
           <ToxicCard
             name={person.name}
-            toxicFact={person.toxicFact}
             toxicTraits={person.toxicTraits}
             imagePath={person.imagePath}
           />

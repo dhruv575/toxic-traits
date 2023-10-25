@@ -8,13 +8,11 @@ import { Box } from '@mui/system';
 
 type ToxicCardProps = {
   name: string;
-  toxicFact: string;
-  toxicTraits: string;
+  toxicTraits: string[];
   imagePath: string;
 };
 export default function ToxicCard({
   name,
-  toxicFact,
   toxicTraits,
   imagePath,
 }: ToxicCardProps) {
@@ -55,7 +53,7 @@ export default function ToxicCard({
               fontWeight="bold"
               fontSize="14px"
             >
-              {toxicFact}
+              {toxicTraits[0]}
             </Typography>
           </Box>
         </CardContent>
